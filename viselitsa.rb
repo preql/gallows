@@ -1,4 +1,4 @@
-# coding: utf-8
+require 'unicode_utils'
 
 require_relative "lib/game"
 require_relative "lib/result_printer"
