@@ -1,7 +1,7 @@
 class Game
-  MAX_ERRORS = 7
   attr_reader :errors, :letters, :good_letters, :bad_letters, :status
   attr_accessor :version
+  MAX_ERRORS = 7
 
   def initialize(slovo)
     @letters = get_letters(slovo.downcase)
@@ -78,6 +78,7 @@ class Game
     return if repeated?(letter)
     if good?(letter)
       add_letter_to(@good_letters, letter)
+
       @status = :won if solved?
     else
       add_letter_to(@bad_letters, letter)
