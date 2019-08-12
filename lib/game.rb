@@ -78,7 +78,6 @@ class Game
     return if repeated?(letter)
     if good?(letter)
       add_letter_to(@good_letters, letter)
-
       @status = :won if solved?
     else
       add_letter_to(@bad_letters, letter)
