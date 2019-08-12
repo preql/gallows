@@ -1,10 +1,7 @@
 class Game
-
-  attr_reader :errors, :letters, :good_letters, :bad_letters, :status
-
-  attr_accessor :version
-
   MAX_ERRORS = 7
+  attr_reader :errors, :letters, :good_letters, :bad_letters, :status
+  attr_accessor :version
 
   def initialize(slovo)
     @letters = get_letters(slovo.downcase)
@@ -24,7 +21,6 @@ class Game
   def ask_next_letter
     puts "\nВведите следующую букву"
     letter = ""
-
     while letter == "" do
       letter = STDIN.gets.encode("UTF-8").chomp.downcase
     end
@@ -80,15 +76,12 @@ class Game
   def next_step(letter)
     return if @status == :lost || @status == :won
     return if repeated?(letter)
-
     if good?(letter)
       add_letter_to(@good_letters, letter)
-
       @status = :won if solved?
     else
       add_letter_to(@bad_letters, letter)
       @errors += 1
-
       @status = :lost if lost?
     end
   end

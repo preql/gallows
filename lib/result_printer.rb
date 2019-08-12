@@ -3,7 +3,6 @@ class ResultPrinter
     @status_image = []
     current_path = File.dirname(__FILE__)
     counter = 0
-
     while counter <= game.max_errors do
       file_name = current_path + "/../image/#{counter}.txt"
       begin
@@ -23,7 +22,6 @@ class ResultPrinter
     puts "\nСлово: " + get_word_for_print(game.letters, game.good_letters)
     puts "Ошибки (#{game.errors}): #{game.bad_letters.join(", ")}"
     print_viselitsa(game.errors)
-
     if game.lost?
       puts
       puts "Вы проиграли :("
