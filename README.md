@@ -24,6 +24,3 @@ bundle exec ruby viselitsa.rb
 - Открыть файл `words.txt`
 - С новой строки добавить нужные Вам слова
 - Сохранить файл в кодировке UTF-8
-
-## Контактные данные ##
-stereotype1@mail.ru
